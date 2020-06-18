@@ -1,4 +1,6 @@
+" enable syntax highlighting
 syntax on
+
 " indent parameters
 set tabstop=4
 set softtabstop=4
@@ -17,12 +19,10 @@ set incsearch
 set nohlsearch
 
 call plug#begin()
-
 " colorscheme
 Plug 'morhetz/gruvbox'
 " code completer/linter
 Plug 'git@github.com:Valloric/YouCompleteMe.git'
-
 call plug#end()
 
 " set colorscheme
