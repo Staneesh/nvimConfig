@@ -35,6 +35,8 @@ colorscheme gruvbox
 " set background theme
 set background=dark
 
+autocmd CompleteDone * pclose
+
 " this splits the window in half at startup
 au VimEnter * split
 
