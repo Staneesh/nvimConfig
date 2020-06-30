@@ -36,7 +36,7 @@ colorscheme gruvbox
 set background=dark
 
 " this splits the window in half at startup
-au VimEnter * vsplit
+au VimEnter * split
 
 " this is for YCM (rust) - shows it the rust language idk
 let g:ycm_rust_src_path = '/usr/local/rust/src'
