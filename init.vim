@@ -23,7 +23,11 @@ call plug#begin()
 Plug 'morhetz/gruvbox'
 " code completer/linter
 Plug 'git@github.com:Valloric/YouCompleteMe.git'
+
+Plug 'rust-lang/rust.vim'
 call plug#end()
+
+let g:rustfmt_autosave = 1
 
 " set colorscheme
 colorscheme gruvbox
