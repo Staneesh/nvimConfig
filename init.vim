@@ -27,6 +27,9 @@ Plug 'git@github.com:Valloric/YouCompleteMe.git'
 Plug 'rust-lang/rust.vim'
 " auto-closing opened brackets 
 "Plug 'rstacruz/vim-closer'
+" Vim HardTime - disabling arrows and stupid movement options for 
+" the sake of learning
+Plug 'takac/vim-hardtime'
 call plug#end()
 " autoindent rust code on buffer save
 let g:rustfmt_autosave = 1
@@ -63,3 +66,6 @@ inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 " auto indent when braces are entered
 inoremap <expr> <cr> getline(".")[col(".")-2:col(".")-1]=="{}" ? "<cr><esc>O" : "<cr>"
+
+" enable vim-hardtime by default
+let g:hardtime_default_on = 1
