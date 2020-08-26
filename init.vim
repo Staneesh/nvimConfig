@@ -30,6 +30,8 @@ Plug 'rust-lang/rust.vim'
 " Vim HardTime - disabling arrows and stupid movement options for 
 " the sake of learning
 Plug 'takac/vim-hardtime'
+" C++ completion for YCM?
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 call plug#end()
 " autoindent rust code on buffer save
 let g:rustfmt_autosave = 1
@@ -69,3 +71,5 @@ inoremap <expr> <cr> getline(".")[col(".")-2:col(".")-1]=="{}" ? "<cr><esc>O" : 
 
 " enable vim-hardtime by default
 let g:hardtime_default_on = 1
+" disable YCM C++ annoying popup 
+let g:ycm_global_ycm_extra_conf = '~/.config/nvim/.ycm_extra_conf.py'
