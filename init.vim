@@ -29,7 +29,7 @@ Plug 'rust-lang/rust.vim'
 "Plug 'rstacruz/vim-closer'
 " Vim HardTime - disabling arrows and stupid movement options for 
 " the sake of learning
-Plug 'takac/vim-hardtime'
+" Plug 'takac/vim-hardtime'
 " C++ completion for YCM?
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 call plug#end()
@@ -46,7 +46,7 @@ set background=dark
 autocmd CompleteDone * pclose
 
 " this splits the window in half at startup
-au VimEnter * split
+" au VimEnter * split
 
 " this is for YCM (rust) - shows it the rust language idk
 let g:ycm_rust_src_path = '/usr/local/rust/src'
@@ -70,6 +70,6 @@ inoremap {;<CR> {<CR>};<ESC>O
 inoremap <expr> <cr> getline(".")[col(".")-2:col(".")-1]=="{}" ? "<cr><esc>O" : "<cr>"
 
 " enable vim-hardtime by default
-let g:hardtime_default_on = 1
+" let g:hardtime_default_on = 1
 " disable YCM C++ annoying popup 
 " let g:ycm_global_ycm_extra_conf = '~/.config/nvim/plugged/YouCompleteMe/.ycm_extra_conf.py'
