@@ -22,19 +22,19 @@ call plug#begin()
 " colorscheme
 Plug 'morhetz/gruvbox'
 " code completer/linter
-Plug 'git@github.com:Valloric/YouCompleteMe.git'
+" Plug 'git@github.com:Valloric/YouCompleteMe.git'
 " rust auto-indenting
-Plug 'rust-lang/rust.vim'
+" Plug 'rust-lang/rust.vim'
 " auto-closing opened brackets 
 "Plug 'rstacruz/vim-closer'
 " Vim HardTime - disabling arrows and stupid movement options for 
 " the sake of learning
 " Plug 'takac/vim-hardtime'
 " C++ completion for YCM?
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 call plug#end()
 " autoindent rust code on buffer save
-let g:rustfmt_autosave = 1
+" let g:rustfmt_autosave = 1
 
 " set colorscheme
 colorscheme gruvbox
@@ -43,13 +43,13 @@ colorscheme gruvbox
 set background=dark
 
 " close the YCM scratch buffer automatically after a word is completed
-autocmd CompleteDone * pclose
+" autocmd CompleteDone * pclose
 
 " this splits the window in half at startup
 " au VimEnter * split
 
 " this is for YCM (rust) - shows it the rust language idk
-let g:ycm_rust_src_path = '/usr/local/rust/src'
+" let g:ycm_rust_src_path = '/usr/local/rust/src'
 
 " this allows for inserting new lines without enering
 " insert mode. 'timeoutlen' shortens the time the user
