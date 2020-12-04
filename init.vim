@@ -22,7 +22,7 @@ call plug#begin()
 " colorscheme
 Plug 'morhetz/gruvbox'
 " code completer/linter
-" Plug 'git@github.com:Valloric/YouCompleteMe.git'
+ Plug 'git@github.com:Valloric/YouCompleteMe.git'
 " rust auto-indenting
 " Plug 'rust-lang/rust.vim'
 " auto-closing opened brackets 
@@ -31,7 +31,7 @@ Plug 'morhetz/gruvbox'
 " the sake of learning
 " Plug 'takac/vim-hardtime'
 " C++ completion for YCM?
-" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 call plug#end()
 " autoindent rust code on buffer save
 " let g:rustfmt_autosave = 1
@@ -43,7 +43,7 @@ colorscheme gruvbox
 set background=dark
 
 " close the YCM scratch buffer automatically after a word is completed
-" autocmd CompleteDone * pclose
+autocmd CompleteDone * pclose
 
 " this splits the window in half at startup
 " au VimEnter * split
@@ -59,13 +59,13 @@ nmap OO m'O<Esc>''
 set timeoutlen=200
 
 " auto-closing opened brackets
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
+" inoremap " ""<left>
+" inoremap ' ''<left>
+" inoremap ( ()<left>
+" inoremap [ []<left>
+" inoremap { {}<left>
+" inoremap {<CR> {<CR>}<ESC>O
+" inoremap {;<CR> {<CR>};<ESC>O
 " auto indent when braces are entered
 inoremap <expr> <cr> getline(".")[col(".")-2:col(".")-1]=="{}" ? "<cr><esc>O" : "<cr>"
 
