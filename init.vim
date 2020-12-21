@@ -31,8 +31,15 @@ Plug 'morhetz/gruvbox'
 " the sake of learning
 " Plug 'takac/vim-hardtime'
 " C++ completion for YCM?
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+Plug 'preservim/nerdtree'
+
+Plug 'norcalli/nvim-colorizer.lua'
+
 call plug#end()
+set termguicolors
+lua require'colorizer'.setup()
+
 " autoindent rust code on buffer save
 " let g:rustfmt_autosave = 1
 
@@ -73,3 +80,5 @@ inoremap <expr> <cr> getline(".")[col(".")-2:col(".")-1]=="{}" ? "<cr><esc>O" : 
 " let g:hardtime_default_on = 1
 " disable YCM C++ annoying popup 
 " let g:ycm_global_ycm_extra_conf = '~/.config/nvim/plugged/YouCompleteMe/.ycm_extra_conf.py'
+" Start NERDTree on start with proper window focus
+autocmd VimEnter * NERDTree | wincmd p
