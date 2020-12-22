@@ -36,6 +36,8 @@ Plug 'preservim/nerdtree'
 
 Plug 'norcalli/nvim-colorizer.lua'
 
+Plug 'sakshamgupta05/vim-todo-highlight'
+ 
 call plug#end()
 set termguicolors
 lua require'colorizer'.setup()
