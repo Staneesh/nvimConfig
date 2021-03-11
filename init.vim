@@ -22,7 +22,6 @@ call plug#begin()
 " colorscheme
 Plug 'morhetz/gruvbox'
 " code completer/linter
- Plug 'git@github.com:Valloric/YouCompleteMe.git'
 " rust auto-indenting
 " Plug 'rust-lang/rust.vim'
 " auto-closing opened brackets 
@@ -32,15 +31,29 @@ Plug 'morhetz/gruvbox'
 " Plug 'takac/vim-hardtime'
 " C++ completion for YCM?
 " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
-Plug 'preservim/nerdtree'
-
-Plug 'norcalli/nvim-colorizer.lua'
-
-Plug 'sakshamgupta05/vim-todo-highlight'
- 
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+" Plug 'preservim/nerdtree'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
+
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+
+
 set termguicolors
-lua require'colorizer'.setup()
 
 " autoindent rust code on buffer save
 " let g:rustfmt_autosave = 1
@@ -67,6 +80,8 @@ nmap oo m'o<Esc>''
 nmap OO m'O<Esc>''
 set timeoutlen=200
 
+nnoremap ZZ :wqa<CR>
+
 " auto-closing opened brackets
 " inoremap " ""<left>
 " inoremap ' ''<left>
@@ -82,5 +97,9 @@ inoremap <expr> <cr> getline(".")[col(".")-2:col(".")-1]=="{}" ? "<cr><esc>O" : 
 " let g:hardtime_default_on = 1
 " disable YCM C++ annoying popup 
 " let g:ycm_global_ycm_extra_conf = '~/.config/nvim/plugged/YouCompleteMe/.ycm_extra_conf.py'
-" Start NERDTree on start with proper window focus
-autocmd VimEnter * NERDTree | wincmd p
+
+" nerdtree on startup
+" autocmd VimEnter * NERDTree | wincmd p
+
+" bg tansparent
+hi Normal guibg=NONE ctermbg=NONE
